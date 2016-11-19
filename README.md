@@ -1,3 +1,13 @@
+Ole Martins notes for Cthulhu Character Sheet App:
+
+Cthulhu SVG logo courtesy of Pcon:
+http://pcon.github.io/design/cthulhu/
+Cheers!
+
+Icons courtesy of Glyph iconset by Frexy:
+http://glyph.smarticons.co/
+https://github.com/frexy/glyph-iconset/
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

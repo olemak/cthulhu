@@ -1,24 +1,64 @@
-.App {
+.Sheet {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+
+  font-family: 'Poiret One', cursive;
+}
+
+.sheet__header {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: row;
+
+  background-color: gray;
+  padding-top: 1rem;
+}
+
+.sheet__header__logo {
+  flex: 1 0 20vw;
+  height: 6rem;
+  width: 6rem;
+}
+
+.sheet__header__logo svg {
+  fill: white;
+}
+
+.sheet__header__title {
+  flex: 1 0 60vw;
   text-align: center;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.sheet__header__menu {
+  flex: 1 0 20vw;
+  height: 6rem;
+  width: 6rem;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+
+
+
+
+.sheet__main {
+  flex: 1 1 85vh;
 }
 
-.App-intro {
-  font-size: large;
+
+
+
+.sheet__footer {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.sheet__footer >*{
+  flex: 1 1 auto;
+  text-align: center;
 }
