@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+
+
+
 // Assets
 import './App.css';
 import logo from './assets/images/cthulhu.svg'
@@ -7,11 +10,50 @@ import hamburger from './assets/icons/menu-hamburger.svg'
 
 
 // Components
-import Menu from './components/menu/Menu.js'
+import Menu from './components/menu/Menu'
+import Text from './components/text/Text'
+import Create from './components/create/Create'
+import Character from './components/character/Character'
+
+// TUT
+import Footer from './components/todotut/Footer'
+import AddTodo from './containers/AddTodo'
+import VisibleTodoList from './containers/VisibleTodoList'
 
 
 
 class App extends Component {
+  constructor(){
+    super()
+    this.displayContent = this.displayContent.bind(this)
+  }
+
+  displayContent(activeContent){
+    let displayContent;
+      switch(activeContent){
+
+        case 'menu':
+          displayContent = <Menu />
+        break
+
+        case 'create':
+          displayContent = <Create />
+        break
+
+        case 'character':
+          displayContent = <Character />
+        break
+
+        case 'text':
+          displayContent = <Text />
+        break
+
+        default:
+        displayContent = <Menu />
+      }
+      return displayContent
+  }
+
   render() {
     return (
       <div className="Sheet">
@@ -23,7 +65,9 @@ class App extends Component {
         </header>
         
         <main className="sheet__main">
-          <Menu />
+          <AddTodo />
+          <VisibleTodoList />
+          <Footer />
         </main>
 
         <footer className="sheet__footer">
