@@ -16,9 +16,9 @@ import Create from './components/create/Create'
 import Character from './components/character/Character'
 
 // TUT
-import Footer from './components/todotut/Footer'
-import AddTodo from './containers/AddTodo'
-import VisibleTodoList from './containers/VisibleTodoList'
+//import Footer from './components/todotut/Footer'
+//import AddTodo from './containers/AddTodo'
+//import VisibleTodoList from './containers/VisibleTodoList'
 
 
 
@@ -65,9 +65,7 @@ class App extends Component {
         </header>
         
         <main className="sheet__main">
-          <AddTodo />
-          <VisibleTodoList />
-          <Footer />
+          {this.displayContent()}
         </main>
 
         <footer className="sheet__footer">
