@@ -1,4 +1,9 @@
-const Text = {
+const Copy = {
+	about: 		'About bla bla',
+	colophon: 	'Colophon bla bla',
+	subscribe: 	'Subscribe bla bla'
+
+	/*
 	placeholder: {
 		title: <h2>Placeholder Headline</h2>,
 		body: <div>
@@ -16,4 +21,7 @@ const Text = {
 				</p>
 				</div> 
 	}
+	*/
 }
+
+export default Copy

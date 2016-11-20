@@ -19,9 +19,10 @@ class App extends Component {
     this.state = {
       title:      'Cthulhu Character Sheet',
       context:    'create',
+      text:       'placeholder', 
       details: {
-        name:       '',
-        occupation: '',
+        name:       'none',
+        occupation: 'none',
         age: 0 
       },
       stats:      [],
@@ -30,11 +31,21 @@ class App extends Component {
       }
 
     this.displayContent = this.displayContent.bind(this)
-    this.displayMenu = this.displayMenu.bind(this)
+    this._displayMenu = this._displayMenu.bind(this)
+    this.the_clickHandler = this.the_clickHandler.bind(this)
   }
 
-  displayMenu(context){
-    this.setState({context: context})
+
+  the_clickHandler(action){
+    this.setState({[action.index]: action.value})
+  }
+
+  _displayMenu(){
+    const action = {
+      index: 'context',
+      value: 'menu'
+    }
+    this.the_clickHandler(action)
   }
 
   displayContent(activeContent){
@@ -50,7 +61,7 @@ class App extends Component {
           displayContent = <Character />
         break
         case 'text':
-          displayContent = <Text />
+          displayContent = <Text textIndex={this.state.text} />
         break
         default:
         displayContent = <Menu />
@@ -65,7 +76,7 @@ class App extends Component {
         <header className="sheet__header">
             <img  className="sheet__header__logo" src={logo} alt="logo"/>
             <h2   className="sheet__header__title">{this.state.title}</h2>
-            <img  className="sheet__header__menu" src={hamburger} onClick={this.displayMenu} alt="menu" />
+            <img  className="sheet__header__menu" src={hamburger} onClick={this._displayMenu} alt="menu" />
         </header>
         
         <main className="sheet__main">
@@ -73,9 +84,18 @@ class App extends Component {
         </main>
 
         <footer className="sheet__footer">
-          <span>ccs@0.2.3</span>
-          <span>by @ol3mak</span>
-          <span>GM options</span>          
+          <span onClick={()=>{
+            this.the_clickHandler({index: 'text', value: 'about'})
+            this.the_clickHandler({index: 'context', value: 'text'})
+          }}>ccs@0.2.3</span>
+          <span onClick={()=>{
+            this.the_clickHandler({index: 'text', value: 'colophon'})
+            this.the_clickHandler({index: 'context', value: 'text'})
+          }}>by @ol3mak</span>
+          <span onClick={()=>{
+            this.the_clickHandler({index: 'text', value: 'subscribe'})
+            this.the_clickHandler({index: 'context', value: 'text'})
+          }}>GM options</span>          
         </footer>
 
       </div>
