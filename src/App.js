@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 
-
-
-
 // Assets
 import './App.css';
 import logo from './assets/images/cthulhu.svg'
@@ -15,39 +12,46 @@ import Text from './components/text/Text'
 import Create from './components/create/Create'
 import Character from './components/character/Character'
 
-// TUT
-//import Footer from './components/todotut/Footer'
-//import AddTodo from './containers/AddTodo'
-//import VisibleTodoList from './containers/VisibleTodoList'
-
-
-
 class App extends Component {
   constructor(){
     super()
+
+    this.state = {
+      title:      'Cthulhu Character Sheet',
+      context:    'create',
+      details: {
+        name:       '',
+        occupation: '',
+        age: 0 
+      },
+      stats:      [],
+      skills:     [],
+      weapons:    []
+      }
+
     this.displayContent = this.displayContent.bind(this)
+    this.displayMenu = this.displayMenu.bind(this)
+  }
+
+  displayMenu(context){
+    this.setState({context: context})
   }
 
   displayContent(activeContent){
     let displayContent;
       switch(activeContent){
-
         case 'menu':
           displayContent = <Menu />
         break
-
         case 'create':
           displayContent = <Create />
         break
-
         case 'character':
           displayContent = <Character />
         break
-
         case 'text':
           displayContent = <Text />
         break
-
         default:
         displayContent = <Menu />
       }
@@ -60,12 +64,12 @@ class App extends Component {
         
         <header className="sheet__header">
             <img  className="sheet__header__logo" src={logo} alt="logo"/>
-            <h2   className="sheet__header__title">Cthulhu Character Sheet</h2>
-            <img  className="sheet__header__menu" src={hamburger} alt="menu" />
+            <h2   className="sheet__header__title">{this.state.title}</h2>
+            <img  className="sheet__header__menu" src={hamburger} onClick={this.displayMenu} alt="menu" />
         </header>
         
         <main className="sheet__main">
-          {this.displayContent()}
+          {this.displayContent(this.state.context)}
         </main>
 
         <footer className="sheet__footer">
