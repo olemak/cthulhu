@@ -8,7 +8,7 @@
 
 .sheet__header {
   flex: 1 1 auto;
-
+  min-height: 7rem;
   display: flex;
   flex-direction: row;
 
@@ -44,6 +44,7 @@
 
 .sheet__main {
   flex: 1 1 85vh;
+  padding: 1rem;
 }
 
 
@@ -61,4 +62,56 @@
 .sheet__footer >*{
   flex: 1 1 auto;
   text-align: center;
+}
+
+
+.Create{
+}
+
+.Stats{
+//  border: 1px solid red;
+  display: flex;  
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 1 30%;
+  padding-bottom: 2rem;
+}
+
+.Stat {
+  display: flex;
+  flex-direction: row;
+  flex: 1 0 50%;
+  align-items: baseline;
+
+}
+
+.Stat > * {
+//  border: 1px solid green;
+}
+
+.Stat__name{
+  flex: 1 1 50%;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.Stat__value {
+  flex: 0 1 7rem;
+ // min-width:25%;
+  font-size: 3rem;
+}
+
+.Stat__interaction {
+  flex: 1 0 20%;
+  align-self: flex-start;
+  justify-content:center;
+}
+
+.Stat img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.Create__button{
+  width: 100%;
 }

@@ -11,6 +11,7 @@ import Menu from './components/menu/Menu'
 import Text from './components/text/Text'
 import Create from './components/create/Create'
 import Character from './components/character/Character'
+import SelectCharacter from './components/select/Select'
 
 class App extends Component {
   constructor(){
@@ -38,6 +39,7 @@ class App extends Component {
 
   the_clickHandler(action){
     this.setState({[action.index]: action.value})
+    console.log("Clicking was involved", action)
   }
 
   _displayMenu(){
@@ -52,7 +54,7 @@ class App extends Component {
     let displayContent;
       switch(activeContent){
         case 'menu':
-          displayContent = <Menu />
+          displayContent = <Menu clickHandler={this.the_clickHandler}/>
         break
         case 'create':
           displayContent = <Create />
@@ -62,6 +64,9 @@ class App extends Component {
         break
         case 'text':
           displayContent = <Text textIndex={this.state.text} />
+        break
+        case 'select':
+          displayContent = <SelectCharacter />
         break
         default:
         displayContent = <Menu />
