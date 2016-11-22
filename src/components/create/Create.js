@@ -20,8 +20,9 @@ class Create extends Component {
 			EDU: 	{name: "EDU", value:50, desc: "Education",		type: "base", roll: {numberOfDice: 2, dicetype: 6, plus: 6, multiplier: 5} },
 			SIZ: 	{name: "SIZ", value:50, desc: "Size",			type: "base", roll: {numberOfDice: 2, dicetype: 6, plus: 6, multiplier: 5} },
 			INT: 	{name: "INT", value:50, desc: "Intelligence", 	type: "base", roll: {numberOfDice: 2, dicetype: 6, plus: 6, multiplier: 5} },
-			Luck: 	{name: "Luck",value:50, desc: "Luck",			type: "luck", roll: {numberOfDice: 3, dicetype: 6, plus: 0, multiplier: 5} }
-					
+			Luck: 	{name: "Luck",value:50, desc: "Luck",			type: "luck", roll: {numberOfDice: 3, dicetype: 6, plus: 0, multiplier: 5} },
+			MoveRate: 8,
+			DamageBonus: 'No bonus'
 		}
 		this.changeStat = this.changeStat.bind(this)
 	}
@@ -32,12 +33,59 @@ class Create extends Component {
 		let newStat = this.state[activeStat]
 			newStat.value = newValue
 		this.setState({[activeStat]: newStat})
+		this.moveModifier()
 	}
 
+	changeAge = action => {
+		let age = (a => {return a})(this.state.Age)
+		if (action === "OLDER") age++
+		if (action === "YOUNGER") age--
+		this.setState({Age: age})
+		this.moveModifier()
+	}
 
+	d6 = num => {
+		let dieRoll = 0;
+		if (typeof num !== 'number') num = 1
+		for (let i  = 0; i<num; i++) dieRoll += Math.round((Math.random() * 5) + 1)
+		return dieRoll 
+	}
 
+	d100 = () => Math.round((Math.random() * 99) + 1)
 
+	generateStats = () => {
+		this.state.stats.map((statIndex)=>{
+			let stat = ((s) => {return s})(this.state[statIndex])
+				stat.value = (this.d6(stat.roll.numberOfDice) + stat.roll.plus) * stat.roll.multiplier
+			this.setState({[statIndex]:stat})
+			return stat
+		})
+		this.moveModifier()
+	}
 
+// AgeModifier (Age affects some starts other than move, which is now sorted)
+
+	moveModifier = () => {
+		let STR = this.state.STR.value
+		let DEX = this.state.DEX.value
+		let SIZ = this.state.SIZ.value
+		let age = this.state.Age
+		let moveModifier = 2
+
+		if (DEX  <  SIZ  &&  STR  <  SIZ) 	moveModifier = 7
+		if (STR  >= SIZ  ||  DEX  >= SIZ) 	moveModifier = 8
+		if (STR  >  SIZ  &&  DEX  >  SIZ)	moveModifier = 9
+
+		if ((age - 30) > 10) { // Older than 40
+			let ageModifier = age -30
+				ageModifier = ageModifier.toString().charAt(0)	
+			moveModifier -= ageModifier
+		}
+
+		moveModifier = (moveModifier > 0 && age < 125 ? moveModifier : 0)
+
+		this.setState({MoveRate: moveModifier})
+	}
 
 
 
@@ -70,13 +118,20 @@ class Create extends Component {
 		        })}
 	        </div>
 
-	        <h4>Move Rate: 30 yards/round</h4>
+	        <h4>Move Rate: {this.state.MoveRate} yards/round</h4>
 	        <h4>Damage Bonus: 1d6</h4>
-	        <h4>Character age: 30</h4>
+	        <div className="Age">
+	        	<h4>
+	        	Age:
+				<img src={plus} onClick={()=>this.changeAge("OLDER")} role="presentation"/>				    				
+	        	<span className="Age__value">{this.state.Age}</span>
+				<img src={minus} onClick={()=>this.changeAge("YOUNGER")} role="presentation" />
+	        	</h4>
+		    </div>
         
-        <button className="Create__button" disabled={true}>Generate Randomly</button>
+        <button className="Create__button" onClick={this.generateStats}>Random Stats</button>
 
-        <button className="Create__button" disabled={true}>Save Stats</button>
+        <button className="Create__button">Save Stats</button>
 
 
       </div>

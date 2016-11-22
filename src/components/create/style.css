@@ -1,20 +1,10 @@
-.Menu {
-	flex: 1 1 auto;
+.Age img{ 
+	height: 2rem;
+	width: 2rem;
 }
 
-.menu__item {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	list-style-type: none;
-	font-size: 4rem;
-
-}
-
-.menu__item__icon {
-	height: 4rem;
-	width: 4rem;
-	margin-right: 2rem;
-
+.Age__value {
+	display: inline-block;
+	min-width: 5rem;
+	text-align: center;
 }
