@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"age",
+				"ageEffects"
+			],
+			[
+				"m",
+				"MoveRate"
+			],
+			[
+				"Move",
+				"MoveRate"
+			],
+			[
+				"ge",
+				"generateStats"
+			],
+			[
+				"new",
+				"newValue"
+			],
+			[
+				"act",
+				"activeStat"
+			],
+			[
+				"fle",
+				"flex-direction"
+			],
+			[
+				"Stat__inter",
+				"Stat__interaction__up"
+			],
+			[
 				"Menu",
 				"MenuItem"
 			],
@@ -74,10 +106,6 @@
 			[
 				"expa",
 				"expandedArticle"
-			],
-			[
-				"new",
-				"newPosition"
 			],
 			[
 				"transition",
@@ -170,10 +198,6 @@
 			[
 				"get",
 				"getElementById"
-			],
-			[
-				"ge",
-				"geometry"
 			],
 			[
 				"content",
@@ -348,10 +372,6 @@
 				"var_dump"
 			],
 			[
-				"m",
-				"month"
-			],
-			[
 				"fest",
 				"festivalSlutt"
 			],
@@ -494,26 +514,6 @@
 			[
 				"max",
 				"max-width: "
-			],
-			[
-				"screen",
-				"screensize"
-			],
-			[
-				"bar",
-				"background-color: "
-			],
-			[
-				"bac",
-				"background-color: "
-			],
-			[
-				"tweet",
-				"tweetButton"
-			],
-			[
-				"blog",
-				"blogname"
 			]
 		]
 	},
@@ -523,46 +523,74 @@
 			"file": "src/App.js",
 			"settings":
 			{
-				"buffer_size": 2850,
+				"buffer_size": 3076,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/create/Create.js",
+			"settings":
+			{
+				"buffer_size": 6633,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "src/components/menu/Menu.js",
 			"settings":
 			{
-				"buffer_size": 616,
+				"buffer_size": 1161,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/components/text/Text.js",
+			"file": "src/components/create/style.css",
 			"settings":
 			{
-				"buffer_size": 1222,
+				"buffer_size": 121,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/components/text/example.js",
+			"file": "src/components/select/style.css",
 			"settings":
 			{
-				"buffer_size": 68,
+				"buffer_size": 267,
 				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "const example = {"
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "README.md",
+			"file": "src/App.css",
 			"settings":
 			{
-				"buffer_size": 45408,
+				"buffer_size": 1395,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import React from 'react'\nimport ReactDOM from 'react-dom'\n\nimport SelectCharacter from './Select'\n\n\ndescribe('SelectCharacter', ()=>{\n\tit('qualifies for react-dom rendering', () => {\n\t  const div = document.createElement('div')\n\t  ReactDOM.render(<Create />, div)\n\t})\n})",
+			"file": "src/components/select/Select.test.js",
+			"file_size": 253,
+			"file_write_time": 131242296902696996,
+			"settings":
+			{
+				"buffer_size": 271,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/select/Select.js",
+			"settings":
+			{
+				"buffer_size": 303,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -613,10 +641,22 @@
 		"/C/prosjekter/cthulhu/src/components/character",
 		"/C/prosjekter/cthulhu/src/components/create",
 		"/C/prosjekter/cthulhu/src/components/menu",
+		"/C/prosjekter/cthulhu/src/components/select",
 		"/C/prosjekter/cthulhu/src/components/text"
 	],
 	"file_history":
 	[
+		"/C/prosjekter/cthulhu/src/components/create/style.css",
+		"/C/prosjekter/cthulhu/src/components/text/Text.test.js",
+		"/C/prosjekter/cthulhu/src/components/menu/Menu.test.js",
+		"/C/prosjekter/cthulhu/src/App.test.js",
+		"/C/prosjekter/cthulhu/src/components/character/character.test.js",
+		"/C/prosjekter/cthulhu/src/components/text/Text.js",
+		"/C/prosjekter/cthulhu/src/components/menu/Menu.js",
+		"/C/prosjekter/cthulhu/src/components/text/example.js",
+		"/C/prosjekter/cthulhu/src/components/create/create.test.js",
+		"/C/prosjekter/cthulhu/package.json",
+		"/C/prosjekter/cthulhu/src/App.css",
 		"/C/prosjekter/cthulhu/src/components/text/information.js",
 		"/C/prosjekter/cthulhu/src/reducers/index.js",
 		"/C/prosjekter/cthulhu/src/containers/VisibleTodoList.js",
@@ -627,10 +667,8 @@
 		"/C/prosjekter/cthulhu/src/components/todotut/Link.js",
 		"/C/prosjekter/cthulhu/src/components/todotut/todoList.js",
 		"/C/prosjekter/cthulhu/src/components/todotut/todo.js",
-		"/C/prosjekter/cthulhu/package.json",
 		"/C/prosjekter/cthulhu/src/actions/index.js",
 		"/C/prosjekter/cthulhu/src/components/menu/menu.css",
-		"/C/prosjekter/cthulhu/src/App.css",
 		"/C/prosjekter/cthulhu/src/assets/index.css",
 		"/C/prosjekter/cthulhu/src/components/create/Create.js",
 		"/C/prosjekter/cthulhu/src/components/character/character.js",
@@ -639,7 +677,6 @@
 		"/C/prosjekter/cthulhu/src/components/text/text.css",
 		"/C/prosjekter/cthulhu/public/index.html",
 		"/C/prosjekter/cthulhu/README.md",
-		"/C/prosjekter/cthulhu/src/components/menu/Menu.js",
 		"/C/prosjekter/glyph-iconset/package.json",
 		"/C/prosjekter/cthulhu/src/assets/images/cthulhu.svg",
 		"/C/prosjekter/cthulhu/src/components/Menu.test.js",
@@ -819,45 +856,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2850,
+						"buffer_size": 3076,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1523,
-								1523
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 702.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/components/menu/Menu.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 616,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								213,
-								213
+								1502,
+								1502
 							]
 						],
 						"settings":
@@ -868,6 +875,34 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/components/create/Create.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1781,
+								1781
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -875,19 +910,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/components/text/Text.js",
+					"file": "src/components/menu/Menu.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1222,
+						"buffer_size": 1161,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								997,
-								997
+								636,
+								636
 							]
 						],
 						"settings":
@@ -900,64 +935,91 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 3,
-					"file": "src/components/text/example.js",
+					"file": "src/components/create/style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 68,
+						"buffer_size": 121,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								68,
-								68
+								118,
+								118
 							]
 						],
 						"settings":
 						{
-							"auto_name": "const example = {",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "README.md",
-					"semi_transient": true,
+					"file": "src/components/select/style.css",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 45408,
+						"buffer_size": 267,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								203,
-								176
+								131,
+								131
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/App.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1395,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								420
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -966,6 +1028,62 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/components/select/Select.test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 271,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								82
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/components/select/Select.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -999,7 +1117,7 @@
 		"cols":
 		[
 			0.0,
-			0.938840349484,
+			0.904719171648,
 			1.0
 		],
 		"rows":
