@@ -6,6 +6,7 @@ import './style.css'
 // Icons
 import plus from '../../assets/icons/plus.svg'
 import minus from '../../assets/icons/remove.svg'
+import error from '../../assets/icons/error.svg'
 
 class Create extends Component {
 	constructor(){
@@ -21,7 +22,7 @@ class Create extends Component {
 			SIZ: 	{name: "SIZ", value:50, desc: "Size",			type: "base", roll: {numberOfDice: 2, dicetype: 6, plus: 6, multiplier: 5} },
 			INT: 	{name: "INT", value:50, desc: "Intelligence", 	type: "base", roll: {numberOfDice: 2, dicetype: 6, plus: 6, multiplier: 5} },
 			Luck: 	{name: "Luck",value:50, desc: "Luck",			type: "luck", roll: {numberOfDice: 3, dicetype: 6, plus: 0, multiplier: 5} },
-			Age: 30,
+			Age: 	30,
 			MoveRate: 8,
 			DamageBonus: 'No bonus'
 		}
@@ -30,6 +31,11 @@ class Create extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState){
+		if (this.state.Age !== prevState.Age ) this.moveModifier(this.state.STR.value, this.state.DEX.value, this.state.SIZ.value, this.state.Age)
+	}
+
+	componentDidReceiveProps(){
+		console.info("props!")
 	}
 
 	changeStat(action){
@@ -38,8 +44,18 @@ class Create extends Component {
 		let newStat = (stat => stat)(this.state[activeStat])
 			newStat.value = newValue
 		this.setState({[activeStat]: newStat})
-		this.moveModifier(this.state.STR, this.state.DEX, this.state.SIZ, this.state.Age)
+
+		if (activeStat === "STR" ||
+			activeStat === "DEX" ||
+			activeStat === "SIZ") {
+			this.moveModifier(	this.state.STR.value, 
+								this.state.DEX.value, 
+								this.state.SIZ.value, 
+								this.state.Age
+			)
+		}
 	}
+
 	changeAge(newAge){
 		console.log("Create.changeAge: ",newAge)
 		this.setState({Age: newAge})
@@ -81,8 +97,6 @@ class Create extends Component {
 		this.setState({MoveRate: moveModifier})
 	}
 
-
-
   render() {
     return (
       <div className="Create">
@@ -91,45 +105,37 @@ class Create extends Component {
 	        {this.state.stats.map(statIndex=>{
 	        	let stat = this.state[statIndex]
 	        	return (
-						<div className={"Stat Stat__" + stat.name} key={"stat_"+stat.name}>	    					
-	    					<h4 className="Stat__name">
-	    						{stat.name}
-	    					</h4>
-	    					<div className="Stat__value">
-	    						{stat.value}
-	    					</div>
-
-	    		    		<div className="Stat__interaction">
-				    			<div className="Stat__interaction__up">
-	    							<img src={plus} onClick={()=>this.changeStat({"STAT": stat.name, "CHANGE": 5 })} role="presentation"/>				    				
-				    			</div>
-	    						<div className="Stat__interaction__down">
-	    							<img src={minus} onClick={()=>this.changeStat({"STAT": stat.name, "CHANGE": -5 })} role="presentation" />
-	    						</div>
-	    					</div>	    					
-	    				</div>
-	        		)
+					<div className={"Stat Stat__" + stat.name} key={"stat_"+stat.name}>	    					
+    					<h4 className="Stat__name">
+    						{stat.name}
+    					</h4>
+    					<div className="Stat__value">
+    						{stat.value}
+    					</div>
+    		    		<div className="Stat__interaction">
+			    			<div className="Stat__interaction__up">
+    							{(stat.value < 90 ? 
+    								<img className="icon" src={plus} onClick={()=>this.changeStat({"STAT": stat.name, "CHANGE": 5 })} role="presentation"/>:
+    								<img className="icon" src={error} role="presentation"/>)}
+			    			</div>
+    						<div className="Stat__interaction__down">
+    							{(stat.value > 0 ? 
+    							<img className="icon" src={minus} onClick={()=>this.changeStat({"STAT": stat.name, "CHANGE": -5 })} role="presentation" />:
+								<img className="icon" src={error} role="presentation"/>)}
+    						</div>
+    					</div>	    					
+    				</div>
+        		)
 	        })}
         </div>
 
         <h4>Move Rate: {this.state.MoveRate} yards/round</h4>
         <h4>Damage Bonus: 1d6</h4>
-
-
-
-
-
-
         <Age age={this.state.Age} change={this.changeAge} />
-        
-
-
-
-
         <button className="Create__button" onClick={this.generateStats}>Random Stats</button>
         <button className="Create__button">Save Stats</button>
       </div>
-    );
+    )
   }
 }
 

@@ -1,6 +1,6 @@
-.Age img{ 
-	height: 2rem;
-	width: 2rem;
+.Age img.icon{ 
+	height: 3rem;
+	width: 3rem;
 }
 
 .Age__value {

@@ -1,3 +1,11 @@
+.icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+
+
+
 .Sheet {
   display: flex;
   flex-direction: column;
@@ -105,11 +113,6 @@
   flex: 1 0 20%;
   align-self: flex-start;
   justify-content:center;
-}
-
-.Stat img {
-  height: 2rem;
-  width: 2rem;
 }
 
 .Create__button{
