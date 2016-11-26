@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Age from '../ageEffect/Age.js'
+import DamageBonus from '../damageBonus/DamageBonus.js'
 
 import './style.css'
 
@@ -24,10 +25,13 @@ class Create extends Component {
 			Luck: 	{name: "Luck",value:50, desc: "Luck",			type: "luck", roll: {numberOfDice: 3, dicetype: 6, plus: 0, multiplier: 5} },
 			Age: 	30,
 			MoveRate: 8,
-			DamageBonus: 'No bonus'
+			DamageBonus: '',
+			Build: '' 
 		}
 		this.changeStat = this.changeStat.bind(this)
+		this.changeState = this.changeState.bind(this)
 		this.changeAge = this.changeAge.bind(this)
+		this.changeDamageBonus = this.changeDamageBonus.bind(this)
 	}
 
 	componentDidUpdate(prevProps, prevState){
@@ -40,8 +44,8 @@ class Create extends Component {
 
 	changeStat(action){
 		let activeStat = action.STAT
-		let newValue = this.state[activeStat].value + action.CHANGE
-		let newStat = (stat => stat)(this.state[activeStat])
+		let newValue 	= this.state[activeStat].value + action.CHANGE
+		let newStat 	= (stat => stat)(this.state[activeStat])
 			newStat.value = newValue
 		this.setState({[activeStat]: newStat})
 
@@ -54,6 +58,15 @@ class Create extends Component {
 								this.state.Age
 			)
 		}
+	}
+
+	changeDamageBonus(actions){
+		this.changeState(actions.DamageBonus)
+		this.changeState(actions.Build)
+	}
+
+	changeState(action){
+		this.setState(action)
 	}
 
 	changeAge(newAge){
@@ -97,6 +110,16 @@ class Create extends Component {
 		this.setState({MoveRate: moveModifier})
 	}
 
+	damageBonus = (STR, SIZ) => {
+			if (STR + SIZ < 65) 	return { DamageBonus: "-2", 	Build: -2	}
+			if (STR + SIZ < 85) 	return { DamageBonus: "-1", 	Build: -1	}
+			if (STR + SIZ < 125)	return { DamageBonus: "None", 	Build: 0	}
+			if (STR + SIZ < 165) 	return { DamageBonus: "+1D4", 	Build: 1	}
+			if (STR + SIZ < 205) 	return { DamageBonus: "+1D6", 	Build: 2	}
+									return { DamageBonus: '', 		Build: ''	}
+	} 
+	
+
   render() {
     return (
       <div className="Create">
@@ -130,7 +153,7 @@ class Create extends Component {
         </div>
 
         <h4>Move Rate: {this.state.MoveRate} yards/round</h4>
-        <h4>Damage Bonus: 1d6</h4>
+        <DamageBonus STR={this.state.STR.value} SIZ={this.state.SIZ.value} change={this.changeDamageBonus} damageBonus={this.state.DamageBonus} build={this.state.Build} /> 
         <Age age={this.state.Age} change={this.changeAge} />
         <button className="Create__button" onClick={this.generateStats}>Random Stats</button>
         <button className="Create__button">Save Stats</button>
