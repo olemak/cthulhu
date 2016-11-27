@@ -23,7 +23,7 @@ class DamageBonus extends Component {
   render() {
     return (
       <div className="DamageBonus">  
-        <p>DamageBonus:  {this.props.damageBonus} (Build: {this.props.build})</p>
+        <h5>DamageBonus:  {this.props.damageBonus || 0} (Build: {this.props.build || 0})</h5>
       </div>
     )
   }

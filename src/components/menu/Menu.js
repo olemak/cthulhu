@@ -24,7 +24,7 @@ class Menu extends Component {
           <li className="menu__item menu__item--create" 
           onClick={()=>{
             this.clickHandler({index: 'context',value: 'create'})
-            this.clickHandler({index: 'title',value: 'Create'})
+            this.clickHandler({index: 'title',value: 'Create (1 of 3)'})
           }}>
               <img  src={create} className="menu__item__icon" alt="presentation" />
               Create

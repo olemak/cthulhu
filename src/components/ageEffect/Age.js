@@ -35,13 +35,15 @@ class Age extends Component {
   render() {
     return (
         <div className="Age">
+        	<div className="Age__picker">
         	<h4>
         	Age:
 			{(this.props.age < 89 ? <img className="icon" src={plus} onClick={()=>this.changeAge("OLDER")} role="presentation"/> : <img  className="icon" src={error} role="presentation"/>)}			    				
         	<span className="Age__value">{this.props.age}</span>
 			{(this.props.age > 15 ? <img className="icon" src={minus} onClick={()=>this.changeAge("YOUNGER")} role="presentation"/> : <img  className="icon" src={error} role="presentation"/>)}			    				
         	</h4>
-        	<h5>{this.state.ageEffect.text}</h5>
+        	</div>
+        	<h5 className="Age__effect">{this.state.ageEffect.text}</h5>
 	    </div>
     )
   }

@@ -77,12 +77,10 @@
 }
 
 .Stats{
-//  border: 1px solid red;
   display: flex;  
   flex-direction: row;
   flex-wrap: wrap;
-  flex: 1 1 30%;
-  padding-bottom: 2rem;
+//  flex: 1 1 30%;
 }
 
 .Stat {

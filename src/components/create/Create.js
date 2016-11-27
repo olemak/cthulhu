@@ -28,18 +28,41 @@ class Create extends Component {
 			DamageBonus: '',
 			Build: '' 
 		}
+		this.changeAge = this.changeAge.bind(this)
 		this.changeStat = this.changeStat.bind(this)
 		this.changeState = this.changeState.bind(this)
-		this.changeAge = this.changeAge.bind(this)
 		this.changeDamageBonus = this.changeDamageBonus.bind(this)
 	}
 
+	/* LIFECYCLE */
 	componentDidUpdate(prevProps, prevState){
 		if (this.state.Age !== prevState.Age ) this.moveModifier(this.state.STR.value, this.state.DEX.value, this.state.SIZ.value, this.state.Age)
 	}
 
-	componentDidReceiveProps(){
-		console.info("props!")
+	/* APP STATE */
+
+	save = () =>{
+		const __updateStats = {}
+		this.state.stats.map(stat => 
+			__updateStats[stat] = this.state[stat].value
+		)
+		this.props.clickHandler({index: "stats", value: __updateStats})
+		
+		const __updateDetails = {
+			age: this.state.Age,
+			stats: this.state.stats,
+			build: this.state.Build,
+			moveRate: this.state.MoveRate,
+			damageBonus: this.state.DamageBonus
+		}
+
+		this.props.clickHandler({index: "details", value: __updateDetails})
+		this.props.clickHandler({index: "context", value: "chooseOccupation"})
+	}
+
+	/* BOUND */
+	changeAge(newAge){
+		this.setState({Age: newAge})
 	}
 
 	changeStat(action){
@@ -60,20 +83,16 @@ class Create extends Component {
 		}
 	}
 
+	changeState(action){
+		this.setState(action)
+	}
+
 	changeDamageBonus(actions){
 		this.changeState(actions.DamageBonus)
 		this.changeState(actions.Build)
 	}
 
-	changeState(action){
-		this.setState(action)
-	}
-
-	changeAge(newAge){
-		console.log("Create.changeAge: ",newAge)
-		this.setState({Age: newAge})
-	}
-
+	/* LOGIC */
 	d6 = num => {
 		let dieRoll = 0;
 		if (typeof num !== 'number') num = 1
@@ -110,20 +129,10 @@ class Create extends Component {
 		this.setState({MoveRate: moveModifier})
 	}
 
-	damageBonus = (STR, SIZ) => {
-			if (STR + SIZ < 65) 	return { DamageBonus: "-2", 	Build: -2	}
-			if (STR + SIZ < 85) 	return { DamageBonus: "-1", 	Build: -1	}
-			if (STR + SIZ < 125)	return { DamageBonus: "None", 	Build: 0	}
-			if (STR + SIZ < 165) 	return { DamageBonus: "+1D4", 	Build: 1	}
-			if (STR + SIZ < 205) 	return { DamageBonus: "+1D6", 	Build: 2	}
-									return { DamageBonus: '', 		Build: ''	}
-	} 
-	
 
   render() {
     return (
       <div className="Create">
-        <h3>Step 1 of 3: Abilities</h3>
         <div className="Stats">
 	        {this.state.stats.map(statIndex=>{
 	        	let stat = this.state[statIndex]
@@ -150,13 +159,13 @@ class Create extends Component {
     				</div>
         		)
 	        })}
+        	<button className="Create__button" onClick={this.generateStats}>Random Stats</button>
+        	<Age age={this.state.Age} change={this.changeAge} />
         </div>
 
-        <h4>Move Rate: {this.state.MoveRate} yards/round</h4>
+        <h5 className="Create__MoveRate">Move Rate: {this.state.MoveRate} yards/round</h5>
         <DamageBonus STR={this.state.STR.value} SIZ={this.state.SIZ.value} change={this.changeDamageBonus} damageBonus={this.state.DamageBonus} build={this.state.Build} /> 
-        <Age age={this.state.Age} change={this.changeAge} />
-        <button className="Create__button" onClick={this.generateStats}>Random Stats</button>
-        <button className="Create__button">Save Stats</button>
+        <button className="Create__button" onClick={this.save}>Save & Proceed</button>
       </div>
     )
   }

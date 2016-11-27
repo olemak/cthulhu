@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Create from './Create'
+import SelectCharacter from './Select'
 
 
-describe('Create', ()=>{
+describe('SelectCharacter', ()=>{
 	it('qualifies for react-dom rendering', () => {
 	  const div = document.createElement('div')
 	  ReactDOM.render(<Create />, div)

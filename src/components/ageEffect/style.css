@@ -1,3 +1,20 @@
+.Age{
+	width: 100%;
+}
+
+.Age__picker {
+	text-align: center;
+}
+
+.Age__picker .icon{
+	margin: 0 0 -0.7rem 0.7rem;
+}
+
+.Age__effect{
+	min-height: 8.6rem;
+	margin-bottom: 0;
+}
+
 .Age img.icon{ 
 	height: 3rem;
 	width: 3rem;

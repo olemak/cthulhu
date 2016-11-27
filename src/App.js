@@ -10,6 +10,7 @@ import hamburger from './assets/icons/menu-hamburger.svg'
 import Menu from './components/menu/Menu'
 import Text from './components/text/Text'
 import Create from './components/create/Create'
+import ChooseOccupation from './components/ChooseOccupation/ChooseOccupation'
 import Character from './components/character/Character'
 import SelectCharacter from './components/select/Select'
 
@@ -18,8 +19,8 @@ class App extends Component {
     super()
 
     this.state = {
-      title:      'Cthulhu Character Sheet',
-      context:    'create',
+      title:      'Occupations',
+      context:    'chooseOccupation',
       text:       'placeholder', 
       details: {
         name:       'none',
@@ -57,7 +58,10 @@ class App extends Component {
           displayContent = <Menu clickHandler={this.the_clickHandler}/>
         break
         case 'create':
-          displayContent = <Create />
+          displayContent = <Create clickHandler={this.the_clickHandler}/>
+        break
+        case 'chooseOccupation':
+          displayContent = <ChooseOccupation clickHandler={this.the_clickHandler}/>
         break
         case 'character':
           displayContent = <Character />
@@ -69,7 +73,7 @@ class App extends Component {
           displayContent = <SelectCharacter />
         break
         default:
-        displayContent = <Menu />
+        displayContent = <Menu clickHandler={this.the_clickHandler}/>
       }
       return displayContent
   }

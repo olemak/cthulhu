@@ -1,0 +1,15 @@
+.Occupation{
+//	border: 1px solid red;
+}
+
+.Occupation__icon{
+	transform: rotate(45deg);
+	transition: transform 1s;
+	margin: 0 0.4rem -0.2rem 0;
+	display: inline-block;
+
+}
+.Occupation__icon--close{
+	transform: rotate(0deg);
+	transition: transform 1s;
+}
