@@ -1,30 +1,37 @@
 import React from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route , Miss, hashHistory } from 'react-router';
 
 // Components
 import App from './App'
 import Menu from './components/menu/Menu'
-import Text from './components/text/Text'
 import Create from './components/create/Create'
+import SelectCharacter from './components/select/Select'
+import MissingContent from './components/MissingContent'
+/*
+import SheetHeader from './components/SheetHeader'
+import Text from './components/text/Text'
 import ChooseOccupation from './components/ChooseOccupation/ChooseOccupation'
 import Character from './components/character/Character'
-import SelectCharacter from './components/select/Select'
+*/
 
-
-const Routes = () => {
-	return(
+const Routes = () => (
 		<Router history={hashHistory}>
-			<Route path="/" component={App} />
-			<Route path="menu" component={Menu} />
-			<Route path="about" component={Text} />
-			<Route path="character" >
-				<Route path="details"	component={Character} />
-				<Route path="create" 	component={Create} />
-				<Route path="select" 	component={SelectCharacter} />
-			</Route>
-			<Route path="occupation" component={ChooseOccupation} />
-		</Router>
-	)
-}
+			<Route path="/" component={App}>
+        		<Route path="/menu" component={Menu} />
+        		<Route path="/character/create" component={Create} />
+          		<Route path="/character/select" component={SelectCharacter} />
+          		<Route path="*" component={MissingContent} />
+	      	</Route>
+	      {/*
+          		<Match pattern="/about" component={Text} />
+          		<Match pattern="/character/display" component={Character} />
+          		<Match pattern="/character/occupation" component={ChooseOccupation} />
+          		
+          		<Miss component={MissingContent} />
+			*/}
 
-export default Routes;
+	      
+	    </Router>
+	)
+
+export default Routes

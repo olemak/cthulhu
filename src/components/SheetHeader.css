@@ -1,0 +1,31 @@
+.sheet__header {
+  flex: 1 1 auto;
+  min-height: 7rem;
+  display: flex;
+  flex-direction: row;
+
+  background-color: gray;
+  padding-top: 1rem;
+}
+
+.sheet__header__logo {
+  flex: 1 0 20vw;
+  height: 6rem;
+  width: 6rem;
+}
+
+.sheet__header__logo svg {
+  fill: white;
+}
+
+.sheet__header__title {
+  flex: 1 0 60vw;
+  text-align: center;
+
+}
+
+.sheet__header__menu {
+  flex: 1 0 20vw;
+  height: 6rem;
+  width: 6rem;
+}

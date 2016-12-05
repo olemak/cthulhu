@@ -13,13 +13,13 @@ const Menu = () => {
     <div className="Menu">
       <ul>
         <li className="menu__item menu__item--create">
-          <Link to="character/create">
+          <Link to="/character/create">
             <img  src={create} className="menu__item__icon" alt="presentation" />
             Create
           </Link>
         </li>
         <li className="menu__item menu__item--select">
-          <Link to="select">
+          <Link to="/character/select">
             <img src={select} className="menu__item__icon" alt="presentation" />
             Select
           </Link>

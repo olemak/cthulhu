@@ -3,60 +3,45 @@
   width: 2rem;
 }
 
-
-
-
 .Sheet {
   display: flex;
   flex-direction: column;
   height: 100vh; 
+  width: 100vw;
 
   font-family: 'Poiret One', cursive;
 }
 
-.sheet__header {
-  flex: 1 1 auto;
-  min-height: 7rem;
-  display: flex;
-  flex-direction: row;
-
-  background-color: gray;
-  padding-top: 1rem;
-}
-
-.sheet__header__logo {
-  flex: 1 0 20vw;
-  height: 6rem;
-  width: 6rem;
-}
-
-.sheet__header__logo svg {
-  fill: white;
-}
-
-.sheet__header__title {
-  flex: 1 0 60vw;
-  text-align: center;
-
-}
-
-.sheet__header__menu {
-  flex: 1 0 20vw;
-  height: 6rem;
-  width: 6rem;
-}
+  .sheet__header {
+    flex: 1 1 7rem;
+    min-height: 6rem;
+    max-height: 6rem;
+    width: calc(100% - 4rem);
+    display: flex;
+    flex-direction: row;
 
 
+    background-color: gray;
+    padding: 1rem;
+    margin-right: 1rem;
+  }
+
+    .sheet__header__logo, .sheet__header__menu {
+      height: 6rem;
+      width: 6rem;
+    }
+
+    .sheet__header__title {
+      flex: 1 0 60vw;
+      text-align: center;
+    }
 
 
 
 .sheet__main {
-  flex: 1 1 85vh;
+  flex: 1 1 auto;
   padding: 1rem;
 }
-
-
-
 
 .sheet__footer {
   flex: 1 1 auto;
@@ -72,9 +57,6 @@
   text-align: center;
 }
 
-
-.Create{
-}
 
 .Stats{
   display: flex;  
