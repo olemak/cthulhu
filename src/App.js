@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+//import { Link } from 'react-router'
 // Assets
 import './App.css';
 import logo from './assets/images/cthulhu.svg'

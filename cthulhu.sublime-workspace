@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"Choose",
+				"ChooseOccupation"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"defa",
+				"defaultProps"
+			],
+			[
+				"def",
+				"defaultProps"
+			],
+			[
+				"damage",
+				"DamageBonus"
+			],
+			[
 				"new",
 				"newAge"
 			],
@@ -178,10 +198,6 @@
 			[
 				"pare",
 				"parentId"
-			],
-			[
-				"class",
-				"classList"
 			],
 			[
 				"par",
@@ -498,125 +514,75 @@
 			[
 				"main",
 				"mainDisplayClass"
-			],
-			[
-				"collapse",
-				"collapsed"
-			],
-			[
-				"loc",
-				"location"
-			],
-			[
-				"li",
-				"list-style-position: "
-			],
-			[
-				"list-style",
-				"list-style-type: "
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "src/components/Occupation/Occupation.js",
+			"settings":
+			{
+				"buffer_size": 1296,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/components/ChooseOccupation/ChooseOccupation.js",
+			"settings":
+			{
+				"buffer_size": 815,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/assets/occupations/occupations.js",
+			"settings":
+			{
+				"buffer_size": 5252,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "src/App.js",
 			"settings":
 			{
-				"buffer_size": 3076,
+				"buffer_size": 3392,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/ageEffect/Age.js",
-			"settings":
-			{
-				"buffer_size": 2790,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/ageEffect/index.js",
-			"settings":
-			{
-				"buffer_size": 2447,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/create/Create.js",
-			"settings":
-			{
-				"buffer_size": 5192,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/components/create/style.css",
-			"settings":
-			{
-				"buffer_size": 12,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "src/components/menu/Menu.js",
 			"settings":
 			{
-				"buffer_size": 1161,
+				"buffer_size": 1170,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/components/ageEffect/style.css",
+			"contents": ".Occupation{\n//\tborder: 1px solid red;\n}\n\n.Occupation__icon{\n\ttransform: rotate(45deg);\n\ttransition: transform 1s;\n\tmargin: 0 0.4rem -0.2rem 0;\n\tdisplay: inline-block;\n\n}\n.Occupation__icon--close{\n\ttransform: rotate(0deg);\n\ttransition: transform 1s;\n}npm start",
+			"file": "src/components/Occupation/style.css",
+			"file_size": 265,
+			"file_write_time": 131246813218816274,
 			"settings":
 			{
-				"buffer_size": 126,
+				"buffer_size": 260,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/components/select/style.css",
+			"file": "src/index.js",
 			"settings":
 			{
-				"buffer_size": 267,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/App.css",
-			"settings":
-			{
-				"buffer_size": 1394,
+				"buffer_size": 684,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "import React from 'react'\nimport ReactDOM from 'react-dom'\n\nimport SelectCharacter from './Select'\n\n\ndescribe('SelectCharacter', ()=>{\n\tit('qualifies for react-dom rendering', () => {\n\t  const div = document.createElement('div')\n\t  ReactDOM.render(<Create />, div)\n\t})\n})",
-			"file": "src/components/select/Select.test.js",
-			"file_size": 253,
-			"file_write_time": 131242296902696996,
-			"settings":
-			{
-				"buffer_size": 271,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/components/select/Select.js",
-			"settings":
-			{
-				"buffer_size": 303,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -660,19 +626,23 @@
 		"/C/prosjekter/cthulhu",
 		"/C/prosjekter/cthulhu/public",
 		"/C/prosjekter/cthulhu/src",
-		"/C/prosjekter/cthulhu/src/assets",
-		"/C/prosjekter/cthulhu/src/assets/images",
-		"/C/prosjekter/cthulhu/src/assets/text",
 		"/C/prosjekter/cthulhu/src/components",
-		"/C/prosjekter/cthulhu/src/components/ageEffect",
-		"/C/prosjekter/cthulhu/src/components/character",
-		"/C/prosjekter/cthulhu/src/components/create",
-		"/C/prosjekter/cthulhu/src/components/menu",
-		"/C/prosjekter/cthulhu/src/components/select",
-		"/C/prosjekter/cthulhu/src/components/text"
+		"/C/prosjekter/cthulhu/src/components/ChooseOccupation",
+		"/C/prosjekter/cthulhu/src/components/Occupation"
 	],
 	"file_history":
 	[
+		"/C/prosjekter/cthulhu/src/App.css",
+		"/C/prosjekter/cthulhu/src/components/create/Create.js",
+		"/C/prosjekter/cthulhu/src/assets/occupations/occupations.js",
+		"/C/prosjekter/cthulhu/src/components/select/Select.js",
+		"/C/prosjekter/cthulhu/src/components/ageEffect/style.css",
+		"/C/prosjekter/cthulhu/src/components/select/style.css",
+		"/C/prosjekter/cthulhu/src/components/select/Select.test.js",
+		"/C/prosjekter/cthulhu/src/components/menu/menu.css",
+		"/C/prosjekter/cthulhu/src/App.js",
+		"/C/prosjekter/cthulhu/src/components/ageEffect/Age.js",
+		"/C/prosjekter/cthulhu/src/components/damageBonus/DamageBonus.js",
 		"/C/prosjekter/cthulhu/src/components/create/style.css",
 		"/C/prosjekter/cthulhu/src/components/text/Text.test.js",
 		"/C/prosjekter/cthulhu/src/components/menu/Menu.test.js",
@@ -683,7 +653,6 @@
 		"/C/prosjekter/cthulhu/src/components/text/example.js",
 		"/C/prosjekter/cthulhu/src/components/create/create.test.js",
 		"/C/prosjekter/cthulhu/package.json",
-		"/C/prosjekter/cthulhu/src/App.css",
 		"/C/prosjekter/cthulhu/src/components/text/information.js",
 		"/C/prosjekter/cthulhu/src/reducers/index.js",
 		"/C/prosjekter/cthulhu/src/containers/VisibleTodoList.js",
@@ -695,9 +664,7 @@
 		"/C/prosjekter/cthulhu/src/components/todotut/todoList.js",
 		"/C/prosjekter/cthulhu/src/components/todotut/todo.js",
 		"/C/prosjekter/cthulhu/src/actions/index.js",
-		"/C/prosjekter/cthulhu/src/components/menu/menu.css",
 		"/C/prosjekter/cthulhu/src/assets/index.css",
-		"/C/prosjekter/cthulhu/src/components/create/Create.js",
 		"/C/prosjekter/cthulhu/src/components/character/character.js",
 		"/C/prosjekter/cthulhu/src/actions/index.test.js",
 		"/C/prosjekter/cthulhu/src/assets/text/default.js",
@@ -879,19 +846,104 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/App.js",
+					"file": "src/components/Occupation/Occupation.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3076,
+						"buffer_size": 1296,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								796,
-								796
+								1096,
+								1096
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/components/ChooseOccupation/ChooseOccupation.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								736,
+								736
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/assets/occupations/occupations.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5252,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								214,
+								214
 							]
 						],
 						"settings":
@@ -901,113 +953,63 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 234.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "src/components/ageEffect/Age.js",
+					"buffer": 4,
+					"file": "src/components/menu/Menu.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2790,
+						"buffer_size": 1170,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1138,
-								1138
+								364,
+								364
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 468.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/components/ageEffect/index.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2447,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 2,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
 				{
-					"buffer": 3,
-					"file": "src/components/create/Create.js",
+					"buffer": 5,
+					"file": "src/components/Occupation/style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5192,
+						"buffer_size": 260,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4445,
-								4445
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1638.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/components/create/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10,
-								10
+								260,
+								260
 							]
 						],
 						"settings":
@@ -1022,170 +1024,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/components/menu/Menu.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1161,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								636,
-								636
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
 					"buffer": 6,
-					"file": "src/components/ageEffect/style.css",
+					"file": "src/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 126,
+						"buffer_size": 684,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40,
-								40
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/components/select/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 267,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								131,
-								131
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/App.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1394,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								43,
-								43
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/components/select/Select.test.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 271,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								67,
-								82
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/components/select/Select.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 303,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								167,
-								167
+								684,
+								684
 							]
 						],
 						"settings":
@@ -1196,7 +1048,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1230,7 +1082,7 @@
 		"cols":
 		[
 			0.0,
-			0.449796865932,
+			0.473888757628,
 			1.0
 		],
 		"rows":
@@ -1278,7 +1130,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
@@ -1286,7 +1138,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 197.0,
+	"side_bar_width": 245.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
